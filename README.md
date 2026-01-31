@@ -15,6 +15,7 @@ Label assignment is a critical component in object detectors, particularly withi
 Our work presents a new paradigm for enhancing detectors, demonstrating that diverse \`\`one-to-many'' supervision can be integrated to achieve state-of-the-art results without compromising model elegance.
 
 ## Data
+
 Using the [COCO-2017](https://cocodataset.org/) dataset for training/evaluation. Organize the dataset as follows:
 
 ```shell
