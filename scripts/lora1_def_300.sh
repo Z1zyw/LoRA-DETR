@@ -1,0 +1,23 @@
+CUDA_VISIBLE_DEVICES='0,1,2,3,4,5,6,7' GPUS_PER_NODE=8 ./tools/run_dist_launch.sh 8 python -u main.py \
+   --output_dir exp/LoRAr32_1x6_MFL_300\
+   --with_box_refine \
+   --two_stage \
+   --dim_feedforward 2048 \
+   --epochs 12 \
+   --lr_drop 11 \
+   --coco_path=data \
+   --num_queries 300 \
+   --use_ms_detr \
+   --use_aux_ffn \
+   --cls_loss_coef 1 \
+   --o2m_cls_loss_coef 2 \
+   --o2m_giou_loss_coef 2 \
+   --o2m_bbox_loss_coef 5 \
+   --enc_cls_loss_coef 2 \
+   --enc_bbox_loss_coef 5 \
+   --enc_giou_loss_coef 2 \
+   --m_lora \
+   --num_lora 1 \
+   --w_mfl_2 \
+   --r_lora 32 \
+   --lr_linear_proj_names bbox_embed \

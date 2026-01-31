@@ -1,0 +1,28 @@
+CUDA_VISIBLE_DEVICES='0,1,2,3,4,5,6,7' GPUS_PER_NODE=8 ./tools/run_dist_launch.sh 8 python -u main.py \
+   --output_dir exp/LoRAr48_3x642_MFL_900PP_indice_merge\
+   --with_box_refine \
+   --two_stage \
+   --dim_feedforward 2048 \
+   --epochs 12 \
+   --lr_drop 11 \
+   --coco_path=data \
+   --num_queries 900 \
+   --dropout 0.0 \
+   --mixed_selection \
+   --look_forward_twice \
+   --use_ms_detr \
+   --use_aux_ffn \
+   --cls_loss_coef 1 \
+   --o2m_cls_loss_coef 2 \
+   --o2m_giou_loss_coef 2 \
+   --o2m_bbox_loss_coef 5 \
+   --enc_cls_loss_coef 2 \
+   --enc_bbox_loss_coef 5 \
+   --enc_giou_loss_coef 2 \
+   --topk_eval 300 \
+   --m_lora \
+   --w_mfl_2 \
+   --num_lora 3 \
+   --r_lora 48 \
+   --use_indices_merge \
+   --lr_linear_proj_names bbox_embed \
